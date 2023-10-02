@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function teste() {
+      document.getElementById('valor-form').innerHTML = document.getElementById('campo-texto').value;
+    }
+
+    function filtraLista(){
+      const filtro = document.getElementById("filtro").value.toLowerCase();
+      const lis = document.getElementsByTagName("li");
+
+      for (const li of lis) {
+        if (li.innerText.toLowerCase().includes(filtro)){
+          li.style.display = 'block';
+        }else{
+          li.style.display = 'none';
+        }
+      }
+    }
+  </script>
+  <style>
+    #valor-form{
+      font-size: 32px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <input id="campo-texto" type="text" oninput="teste();">
+
+  </form>
+  <div id="valor-form"></div>
+
+
+  <form>
+    <label for="">Filtro: </label>
+    <input type="text" id="filtro" oninput="filtraLista();">
+  </form>
+  <ul>
+    <li class="destaque">Abacate</li>
+    <li>Cenoura</li>
+    <li>Damasco</li>
+    <li>Maça</li>
+    <li>Melancia</li>
+    <li class="destaque">Uva</li>
+  </ul>
+
+</body>
+
+</html>

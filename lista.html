@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function filtraLista() {
+        const filtro = document.getElementById("filtro").value.toLowerCase();
+        const lis = document.getElementsByTagName("li");
+
+        for (const li of lis) {
+          if (filtro == "") {
+            li.style.fontWeight = "normal";
+          } else if (li.innerText.toLowerCase().includes(filtro)) {
+            li.style.display = "block";
+            li.style.fontWeight = "bold";
+          }
+        }
+      }
+    </script>
+    <style></style>
+  </head>
+
+  <body>
+    <form>
+      <label for="">Filtro: </label>
+      <input type="text" id="filtro" oninput="filtraLista();" />
+    </form>
+    <ul>
+      <li>João</li>
+      <li>Luiz</li>
+      <li>Eduardo</li>
+      <li>Guilherme</li>
+      <li>Lucas</li>
+      <li>Pedro</li>
+    </ul>
+  </body>
+</html>

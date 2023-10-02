@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function multiplicando() {
+            const multiplica = document.getElementById("multi").value;
+            document.getElementById("resultado").innerHTML = '';
+
+            if (multiplica !== '') {
+                for (let c = 1; c <= 10; c++) {
+                    document.getElementById("resultado").innerHTML += `<p>${multiplica} x ${c} = ${multiplica * c}</p>`;
+                }
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Tabuada</h1>
+
+    <form>
+        <label for="">Multiplicando:</label>
+        <input type="number" id="multi" oninput="multiplicando()">
+    </form>
+
+    <div id="resultado"></div>
+    
+</body>
+</html>
